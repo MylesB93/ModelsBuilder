@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@using Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<ul>
+    @foreach (BlogListing bl in Model.Content.BlogListings)
+    {
+        <li>
+            <a href="@bl.Url">@bl.Title</a>
+        </li>
+    }
+</ul>
